@@ -1,82 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Próximamente</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --text: #f8fafc;
-            --accent: #38bdf8;
-            --muted: #94a3b8;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carmen Carrillo - UX/UI Designer | En construcción</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Italiana (para encabezados elegantes) e Inter (para cuerpo de texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styling & Theme Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#2A1D1A',        // Marrón oscuro profundo de fondo
+              card: '#352522',      // Marrón ligeramente más claro para tarjetas/pills
+              rose: '#D2A4A9',      // Rosa viejo / Dusty rose principal
+              roseLight: '#E8C2C6', // Rosa más claro para hovers y acentos
+              cream: '#F4ECE8',     // Crema claro neutro para texto principal
+              creamMuted: '#CFC0B8',// Crema apagado para subtítulos
+              tagBg: '#DCE3DB',     // Verde/Gris muy suave para la cápsula del subtítulo de la marca
+              tagText: '#2B352C',   // Texto oscuro para contraste sobre la cápsula
+            }
+          },
+          fontFamily: {
+            heading: ['Italiana', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 18s linear infinite',
+            'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 550px;
-        }
-        .badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-            letter-spacing: -0.025em;
-        }
-        p {
-            color: var(--muted);
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-        .links a {
-            color: var(--text);
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 4px;
-            transition: color 0.2s;
-        }
-        .links a:hover {
-            color: var(--accent);
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    /* Efecto de resplandor suave detrás de la estrella */
+    .star-glow {
+      filter: drop-shadow(0px 0px 25px rgba(210, 164, 169, 0.35));
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <span class="badge">En construcción</span>
-        <h1>Algo nuevo se está cocinando</h1>
-        <p>Estoy trabajando en mi nuevo portfolio para mostrar mis últimos proyectos. Estará disponible muy pronto.</p>
-        <div class="links">
-            <!-- Sustituye los "#" por tus enlaces reales -->
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">GitHub</a>
-            <a href="mailto:tuemail@ejemplo.com">Contacto</a>
-        </div>
+<body class="bg-brand-bg text-brand-cream font-sans min-h-screen flex flex-col justify-between items-center p-6 md:p-10 select-none overflow-x-hidden">
+
+  <!-- Header / Branding Personal superior -->
+  <header class="w-full max-w-4xl flex flex-col items-center justify-center pt-4 md:pt-6 text-center space-y-3 z-10">
+    <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl tracking-wide text-brand-roseLight">
+      Carmen Carrillo
+    </h1>
+    
+    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-tagBg text-brand-tagText font-medium text-xs sm:text-sm tracking-wider uppercase shadow-sm">
+      UX/UI DESIGNER &nbsp;|&nbsp; WEB & APP DESIGN
     </div>
+
+    <!-- Tags secundarias de especialidad -->
+    <p class="text-brand-creamMuted text-xs sm:text-sm tracking-widest font-light pt-1">
+      Prototyping &nbsp;•&nbsp; Wireframing &nbsp;•&nbsp; User Research
+    </p>
+  </header>
+
+
+  <!-- Sección Central: Estrella giratoria + Mensaje principal -->
+  <main class="w-full max-w-2xl flex flex-col items-center text-center my-auto py-12 px-4 z-10">
+    
+    <!-- Estrella animada que simula rueda de carga / engranaje -->
+    <div class="relative mb-8 md:mb-10 group cursor-pointer" title="Diseñando experiencia...">
+      
+      <!-- Glow ambiental -->
+      <div class="absolute inset-0 bg-brand-rose/20 rounded-full blur-2xl transform scale-125 transition-all duration-500 group-hover:scale-150"></div>
+      
+      <!-- SVG de la Estrella de 5 puntas girando de forma continua -->
+      <svg class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 text-brand-rose animate-spin-slow star-glow transition-transform duration-500 ease-out" 
+           viewBox="0 0 200 200" 
+           fill="currentColor" 
+           xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG trazado de estrella estilizada elegante de 5 puntas -->
+        <path d="M100 0 L126.8 72.3 L200 72.3 L140.8 117.0 L163.6 189.3 L100 144.6 L36.4 189.3 L59.2 117.0 L0 72.3 L73.2 72.3 Z" />
+      </svg>
+
+      <!-- Punto central decorativo suave -->
+      <div class="absolute inset-0 m-auto w-3 h-3 bg-brand-bg rounded-full border border-brand-rose/40"></div>
+    </div>
+
+    <!-- Título con la tipografía llamativa y color rosa -->
+    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl text-brand-rose font-normal leading-tight mb-4">
+      Algo nuevo se está diseñando
+    </h2>
+
+    <!-- Descripción aclaratoria con neutro suave derivado del marrón/rosa -->
+    <p class="text-brand-creamMuted text-base sm:text-lg max-w-lg leading-relaxed font-light">
+      Estoy trabajando en mi portfolio para mostrar mis últimos proyectos. Estará disponible muy pronto.
+    </p>
+
+  </main>
+
+
+  <!-- Botones de Acción e Interacción en la parte inferior -->
+  <footer class="w-full max-w-xl flex flex-col items-center space-y-4 pb-6 z-10">
+    
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 items-center w-full">
+      
+      <!-- Botón principal a LinkedIn -->
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" 
+         class="flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-brand-rose text-brand-bg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-brand-roseLight hover:shadow-[0_0_20px_rgba(210,164,169,0.4)] hover:-translate-y-0.5 active:translate-y-0">
+        <!-- Ícono LinkedIn -->
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <!-- Botón de Contacto (Abre selector/modal rápido con email) -->
+      <button id="contactBtn" onclick="toggleContact()" 
+              class="flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-brand-rose/60 text-brand-cream font-medium text-sm sm:text-base transition-all duration-300 hover:bg-brand-rose/10 hover:border-brand-rose hover:-translate-y-0.5 active:translate-y-0">
+        <!-- Ícono Email -->
+        <svg class="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span>Contacto</span>
+      </button>
+
+    </div>
+
+    <!-- Menú desplegable suave de contacto al pulsar el botón -->
+    <div id="contactPanel" class="hidden opacity-0 transform -translate-y-2 transition-all duration-300 ease-out mt-3 p-4 rounded-2xl bg-brand-card border border-brand-rose/20 text-center shadow-2xl max-w-sm w-full">
+      <p class="text-xs text-brand-creamMuted mb-2 uppercase tracking-wider font-medium">Correo electrónico</p>
+      <div class="flex items-center justify-between gap-2 bg-brand-bg/60 p-2.5 rounded-xl border border-brand-rose/10">
+        <span class="text-sm text-brand-cream font-mono select-all truncate">ccpa65@gmail.com</span>
+        <button onclick="copyEmail()" id="copyBtn" class="px-3 py-1 rounded-lg bg-brand-rose/20 text-brand-roseLight text-xs font-medium hover:bg-brand-rose hover:text-brand-bg transition-colors flex-shrink-0">
+          Copiar
+        </button>
+      </div>
+      <a href="mailto:ccpa65@gmail.com" class="inline-block mt-3 text-xs text-brand-rose hover:underline">
+        Abrir aplicación de correo &rarr;
+      </a>
+    </div>
+
+    <!-- Copyright discreto -->
+    <p class="text-xs text-brand-creamMuted/50 pt-4 font-light">
+      &copy; Carmen Carrillo — Todos los derechos reservados.
+    </p>
+  </footer>
+
+
+  <!-- Lógica simple en JavaScript para desplegar el panel de contacto y copiar email -->
+  <script>
+    function toggleContact() {
+      const panel = document.getElementById('contactPanel');
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        setTimeout(() => {
+          panel.classList.remove('opacity-0', '-translate-y-2');
+        }, 10);
+      } else {
+        panel.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => {
+          panel.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    function copyEmail() {
+      const email = "ccpa65@gmail.com";
+      
+      // Método seguro de copia
+      const tempInput = document.createElement("input");
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      // Feedback visual en el botón
+      const btn = document.getElementById('copyBtn');
+      const originalText = btn.innerText;
+      btn.innerText = "¡Copiado!";
+      btn.classList.add("bg-brand-rose", "text-brand-bg");
+      
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.classList.remove("bg-brand-rose", "text-brand-bg");
+      }, 2000);
+    }
+  </script>
+
 </body>
 </html>
