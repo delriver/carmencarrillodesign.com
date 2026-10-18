@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carmen Carrillo - UX/UI Designer | En construcción</title>
+  <title>Carmen Carrillo - UX/UI Designer</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,10 +20,10 @@
         extend: {
           colors: {
             brand: {
-              bg: '#422B23',        // Marrón principal de fondo
-              rose: '#D8A5A5',      // Rosa principal
-              sage: '#C2C6B9',      // Verde grisáceo principal
-              rose_light: '#EBDBDB'      // Rosa blanquecino para texto
+              bg: '#1d0e08',          // Marrón principal de fondo
+              rose: '#D8A5A5',        // Rosa principal
+              sage: '#C2C6B9',        // Verde grisáceo principal
+              rose_light: '#EBDBDB'   // Rosa blanquecino para texto
             }
           },
           fontFamily: {
@@ -49,24 +49,7 @@
     }
 
     .star-glow {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .star-glow::before {
-      content: '';
-      position: absolute;
-      inset: -45%;
-      z-index: -1;
-      pointer-events: none;
-      background: radial-gradient(
-        circle closest-side,
-        rgba(216, 165, 165, 0.35) 0%,
-        rgba(216, 165, 165, 0.28) 25%,
-        rgba(216, 165, 165, 0.14) 50%,
-        rgba(216, 165, 165, 0.04) 75%,
-        rgba(216, 165, 165, 0) 100%
-      );
+      filter: drop-shadow(0px 0px 25px rgba(216, 165, 165, 0.35));
     }
   </style>
 </head>
@@ -88,15 +71,15 @@
   <main class="w-full max-w-2xl flex flex-col items-center text-center mt-auto pt-12 pb-20 px-4 z-10">
     
     <!-- Estrella animada que simula rueda de carga / engranaje -->
-    <div class="star-glow mb-8 md:mb-10 cursor-default" aria-hidden="true">
+    <div class="relative mb-8 md:mb-10 cursor-default" aria-hidden="true">
+      <div class="absolute inset-0 bg-brand-rose/20 rounded-full blur-2xl transform scale-125 pointer-events-none"></div>
       
       <!-- SVG de la Estrella de 5 puntas girando de forma continua -->
-      <svg class="block w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 text-brand-rose animate-spin-slow"
+      <svg class="block w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 text-brand-rose animate-spin-slow star-glow"
            focusable="false"
-           viewBox="0 0 200 200" 
-           fill="currentColor" 
+           viewBox="0 0 200 200"
+           fill="currentColor"
            xmlns="http://www.w3.org/2000/svg">
-        <!-- SVG trazado de estrella estilizada elegante de 5 puntas -->
         <path d="M100 0 L126.8 72.3 L200 72.3 L140.8 117.0 L163.6 189.3 L100 144.6 L36.4 189.3 L59.2 117.0 L0 72.3 L73.2 72.3 Z" />
       </svg>
     </div>
